@@ -83,32 +83,32 @@ const Statistic = () => {
                     const contractsData = await loadService.loadContracts(options);
                     const PaymentsData = await loadService.loadPayments(options);
                     const house = await loadService.loadHouses();
-                    const houseService = await loadService.loadServices(options);
+                    // const houseService = await loadService.loadServices(options);
 
-                    house.forEach(house => { //thong ke service theo house
-                        const abcd = loadService.loadServicesByHouseId(house.id, options);
-                        resService[abcd.id - 1]++;
-                        setServiceNumber(resService);
-                        console.log("service number: " + abcd.id - 1)
-                    });
+                    // house.forEach(house => { //thong ke service theo house
+                    //     const abcd = loadService.loadServicesByHouseId(house.id, options);
+                    //     resService[abcd.id - 1]++;
+                    //     setServiceNumber(resService);
+                    //     console.log("service number: " + abcd.id - 1)
+                    // });
 
-                    houseService.forEach(() => { //random color
-                        let color;
-                        do {
-                            color = '#' + Math.floor(Math.random() * 16777215).toString(16)
-                        } while (colors.includes(color));
-                        colors.push(color);
-                        setRandomColors(colors);
-                    });
+                    // houseService.forEach(() => { //random color
+                    //     let color;
+                    //     do {
+                    //         color = '#' + Math.floor(Math.random() * 16777215).toString(16)
+                    //     } while (colors.includes(color));
+                    //     colors.push(color);
+                    //     setRandomColors(colors);
+                    // });
 
                     console.log("mau gi" + colors)
 
-                    houseService.forEach(house => { // list ten service
-                        const index = house.id - 1;
-                        resServiceName[index] = house.name;
-                        setServiceName(resServiceName)
-                    })
-                    console.log("service name: " + resServiceName)
+                    // houseService.forEach(house => { // list ten service
+                    //     const index = house.id - 1;
+                    //     resServiceName[index] = house.name;
+                    //     setServiceName(resServiceName)
+                    // })
+                    // console.log("service name: " + resServiceName)
 
                     house.forEach(contract => { // thong ke house theo categoryId
 
